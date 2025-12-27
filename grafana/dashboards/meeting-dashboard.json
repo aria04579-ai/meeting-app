@@ -1,0 +1,23 @@
+{
+  "title": "Meeting Countdown",
+  "panels": [
+    {
+      "type": "gauge",
+      "title": "Seconds Until Meeting",
+      "targets": [
+        {
+          "expr": "meeting_seconds_remaining"
+        }
+      ]
+    },
+    {
+      "type": "timeseries",
+      "title": "Request Rate",
+      "targets": [
+        {
+          "expr": "rate(app_requests_total[1m])"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "meeting_app"
+    metrics_path: /metrics.php
+    basic_auth:
+      username: metrics
+      password: secret
+    static_configs:
+      - targets: ["app:80"]
